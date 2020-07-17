@@ -20,7 +20,10 @@ buildscript {
 }
 
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
+
+if (project == rootProject) {
+  apply plugin: 'com.github.dcendents.android-maven'
+}
 
 android {
   compileSdkVersion getExtOrDefault('compileSdkVersion', 28)
